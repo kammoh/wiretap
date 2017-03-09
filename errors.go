@@ -1,12 +1,11 @@
 package wiretap
 
 /*
-#cgo pkg-config: glib-2.0
+#cgo pkg-config: wireshark
 #cgo CFLAGS: -I/usr/local/include/wireshark -I/usr/include/wireshark
 #cgo LDFLAGS: -lwiretap
 
 #include "wiretap/wtap.h"
-
 */
 import "C"
 import (
@@ -39,17 +38,17 @@ var (
 	ErrUnsupported               = Error{Code: C.WTAP_ERR_UNSUPPORTED}
 	ErrCantWriteToPipe           = Error{Code: C.WTAP_ERR_CANT_WRITE_TO_PIPE}
 	ErrCantOpen                  = Error{Code: C.WTAP_ERR_CANT_OPEN}
-	ErrUnsupportedFileType       = Error{Code: C.WTAP_ERR_UNSUPPORTED_FILE_TYPE}
-	ErrUnsupportedEncap          = Error{Code: C.WTAP_ERR_UNSUPPORTED_ENCAP}
+	//ErrUnsupportedFileType       = Error{Code: C.WTAP_ERR_UNSUPPORTED_FILE_TYPE}
+	//ErrUnsupportedEncap          = Error{Code: C.WTAP_ERR_UNSUPPORTED_ENCAP}
 	ErrEncapPerPacketUnsupported = Error{Code: C.WTAP_ERR_ENCAP_PER_PACKET_UNSUPPORTED}
 	ErrCantClose                 = Error{Code: C.WTAP_ERR_CANT_CLOSE}
-	ErrCantRead                  = Error{Code: C.WTAP_ERR_CANT_READ}
+	//ErrCantRead                  = Error{Code: C.WTAP_ERR_CANT_READ}
 	ErrShortRead                 = Error{Code: C.WTAP_ERR_SHORT_READ}
 	ErrBadFile                   = Error{Code: C.WTAP_ERR_BAD_FILE}
 	ErrShortWrite                = Error{Code: C.WTAP_ERR_SHORT_WRITE}
-	ErrUncTruncated              = Error{Code: C.WTAP_ERR_UNC_TRUNCATED}
+    //ErrUncTruncated              = Error{Code: C.WTAP_ERR_UNC_TRUNCATED}
 	ErrUncOverflow               = Error{Code: C.WTAP_ERR_UNC_OVERFLOW}
-	ErrUncBadOffset              = Error{Code: C.WTAP_ERR_UNC_BAD_OFFSET}
+	//ErrUncBadOffset              = Error{Code: C.WTAP_ERR_UNC_BAD_OFFSET}
 	ErrRandomOpenStdin           = Error{Code: C.WTAP_ERR_RANDOM_OPEN_STDIN}
 	ErrCompressionNotSupported   = Error{Code: C.WTAP_ERR_COMPRESSION_NOT_SUPPORTED}
 	ErrCantSeek                  = Error{Code: C.WTAP_ERR_CANT_SEEK}
@@ -72,17 +71,17 @@ func init() {
 		ErrUnsupported,
 		ErrCantWriteToPipe,
 		ErrCantOpen,
-		ErrUnsupportedFileType,
-		ErrUnsupportedEncap,
+		//ErrUnsupportedFileType,
+		//ErrUnsupportedEncap,
 		ErrEncapPerPacketUnsupported,
 		ErrCantClose,
-		ErrCantRead,
+		//ErrCantRead,
 		ErrShortRead,
 		ErrBadFile,
 		ErrShortWrite,
-		ErrUncTruncated,
+		//ErrUncTruncated,
 		ErrUncOverflow,
-		ErrUncBadOffset,
+		//ErrUncBadOffset,
 		ErrRandomOpenStdin,
 		ErrCompressionNotSupported,
 		ErrCantSeek,

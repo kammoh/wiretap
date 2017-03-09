@@ -56,7 +56,7 @@ func OpenOffline(fileName string) (*Handle, error) {
 	)
 	cErrInfo := (*C.gchar)(C.CString(errInfo))
 
-	h.wth = C.wtap_open_offline(C.CString(fileName), &err, &cErrInfo, 1)
+	h.wth = C.wtap_open_offline(C.CString(fileName), C.WTAP_TYPE_AUTO, &err, &cErrInfo, 1)
 
 	if err != 0 {
 		return nil, mkErr(int(err))
